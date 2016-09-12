@@ -87,12 +87,12 @@ class BaseProxy(object):
             # Figure out the path to the bitcoin.conf file
             if btc_conf_file is None:
                 if platform.system() == 'Darwin':
-                    btc_conf_file = os.path.expanduser('~/Library/Application Support/Bitcoin/')
+                    btc_conf_file = os.path.expanduser('~/Library/Application Support/Myriadcoin/')
                 elif platform.system() == 'Windows':
-                    btc_conf_file = os.path.join(os.environ['APPDATA'], 'Bitcoin')
+                    btc_conf_file = os.path.join(os.environ['APPDATA'], 'Myriadcoin')
                 else:
-                    btc_conf_file = os.path.expanduser('~/.bitcoin')
-                btc_conf_file = os.path.join(btc_conf_file, 'bitcoin.conf')
+                    btc_conf_file = os.path.expanduser('~/.myriadcoin')
+                btc_conf_file = os.path.join(btc_conf_file, 'myriadcoin.conf')
 
             # Extract contents of bitcoin.conf to build service_url
             with open(btc_conf_file, 'r') as fd:
